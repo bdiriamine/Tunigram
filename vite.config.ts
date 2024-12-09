@@ -3,23 +3,23 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  base: '/Tunigram/', // Update base to match your repository name
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'), // Alias for cleaner imports
+      '@': path.resolve(__dirname, './src'),
     },
   },
   build: {
     rollupOptions: {
-      input: path.resolve(__dirname, 'index.html'), // Ensure entry point is explicitly set
+      input: path.resolve(__dirname, 'index.html'),
     },
-    outDir: 'dist', // Output directory for the build
-    assetsDir: 'assets', // Directory for static assets
+    outDir: 'dist',
+    assetsDir: 'assets',
   },
   server: {
-    host: true, // Enables access from network
-    port: 5173, // Default Vite port
-    open: true, // Opens browser automatically
+    host: true,
+    port: 5173,
+    open: true,
   },
-  base: './', // Ensure relative paths for assets (important for subdirectory hosting)
 });
